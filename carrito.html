@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Carrito</title>
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <!-- ICONOS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header>
+    <div class="hero">
+        <div class="hero-header">
+
+            <a href="./index.html" class="logo">
+                <img src="./24FEC762-47F0-4F9E-8F29-CF139B27135F.webp" alt="Logo de la tienda">
+            </a>
+
+            <div class="hero-content">
+                <h1>Tu Carrito</h1>
+            </div>
+
+            <a href="./carrito.html" class="cart">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+
+        </div>
+    </div>
+</header>
+
+<!-- CONTENIDO -->
+<main>
+
+    <div class="cart-container">
+
+        <!-- PRODUCTOS -->
+        <div class="cart-items">
+          
+        </div>
+
+        <!-- TOTAL -->
+        <h2>Total: <span class="cart-total">$0</span></h2>
+
+        <!-- BOTONES -->
+        <div class="acciones-carrito">
+
+            <button class="clear-cart">
+                <i class="fas fa-trash"></i> Vaciar carrito
+            </button>
+
+            <a href="./productos.html" class="seguir-comprando">
+                Seguir comprando
+            </a>
+
+        </div>
+
+        <!-- FORMULARIO -->
+        <form id="confirmation-form">
+
+            <input 
+                type="text" 
+                id="buyer-name" 
+                placeholder="Nombre y apellido" 
+                required
+            >
+
+            <button type="submit" class="btn-confirmar">
+                Confirmar por WhatsApp
+            </button>
+
+        </form>
+
+    </div>
+
+</main>
+
+<!-- SCRIPT -->
+<script src="./script.js"></script>
+
+</body>
+</html>

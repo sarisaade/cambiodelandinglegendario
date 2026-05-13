@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="./imagenes/favicon-32x32.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    
+        <div class="contact-form">
+            
+            <section>
+                <h2>Formulario de Contacto</h2>
+                <form id="contact-form" action="https://formspree.io/f/mpwzdjlz" method="POST" novalidate>
+                  <div class="form-group">
+                    <input type="text" id="name" name="name" placeholder="Nombre" required>
+                    <span class="error-message" id="name-error"></span> <!-- Contenedor para el error del nombre -->
+                  </div>
+                  <div class="form-group">
+                    <input type="email" id="email" name="email" placeholder="Correo Electrónico" required>
+                    <span class="error-message" id="email-error"></span> <!-- Contenedor para el error del correo -->
+                  </div>
+                  <div class="form-group">
+                    <input type="telefono" id="telefono" name="telefono" placeholder="Telefono" required>
+                    <span class="error-message" id="telefono-error"></span> <!-- Contenedor para el error del telefono -->
+                  </div>
+                  <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Mensaje" required></textarea>
+                    <span class="error-message" id="message-error"></span> <!-- Contenedor para el error del mensaje -->
+                  </div>
+                  <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </div>
+    </main>
+    
+    <script src="./validateForm.js"></script>
+    <script src="sript2.js"></script>
+</body>
+</html>
