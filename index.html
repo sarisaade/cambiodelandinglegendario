@@ -18,12 +18,18 @@
       box-sizing:border-box;
     }
 
-    body{
-      font-family:'Montserrat',sans-serif;
-      background:#f7f4ef;
-      color:#111;
-      overflow-x:hidden;
-    }
+   body{
+
+  font-family:'Montserrat',sans-serif;
+
+  background:#f7f4ef;
+
+  color:#111;
+
+  overflow-x:hidden;
+
+  padding-top:125px;
+}
 
     img{
       width:100%;
@@ -82,18 +88,72 @@
       font-size:20px;
     }
 
-    .hero{
-      min-height:88vh;
-      background:
-      linear-gradient(to right, rgba(4,15,30,.92), rgba(4,15,30,.55)),
-      url(jean\ negro\ sweater\ gris.png);
-      background-size:cover;
-      background-position:center;
-      display:flex;
-      align-items:center;
-      padding:70px;
-      color:white;
-    }
+   .hero{
+  position:relative;
+  min-height:88vh;
+
+  background:
+  radial-gradient(circle at top left,
+  rgba(200,154,104,.25),
+  transparent 30%),
+
+  radial-gradient(circle at bottom right,
+  rgba(255,255,255,.08),
+  transparent 30%),
+
+  linear-gradient(to right,
+  rgba(4,15,30,.95),
+  rgba(4,15,30,.45)),
+
+  url(jean\ negro\ sweater\ gris.png);
+
+  background-size:cover;
+  background-position:center;
+
+  display:flex;
+  align-items:center;
+  padding:70px;
+
+  color:white;
+
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+
+  position:absolute;
+
+  width:700px;
+  height:700px;
+
+  border-radius:50%;
+
+  background:
+  radial-gradient(circle,
+  rgba(200,154,104,.18),
+  transparent 70%);
+
+  top:-250px;
+  left:-250px;
+
+  animation: glowMove 8s ease-in-out infinite;
+}
+
+@keyframes glowMove{
+
+  0%{
+    transform:translate(0,0);
+  }
+
+  50%{
+    transform:translate(60px,40px);
+  }
+
+  100%{
+    transform:translate(0,0);
+  }
+
+}
 
     .hero-content{
       max-width:650px;
@@ -123,15 +183,72 @@
     }
 
     .btn{
-      display:inline-block;
-      background:#c89a68;
-      color:white;
-      padding:18px 34px;
-      text-transform:uppercase;
-      letter-spacing:1px;
-      transition:.3s;
-      font-size:14px;
-    }
+  display:inline-block;
+
+  background:
+  linear-gradient(135deg,
+  #d8a673,
+  #b97a46);
+
+  color:white;
+
+  padding:18px 34px;
+
+  text-transform:uppercase;
+
+  letter-spacing:1px;
+
+  transition:.35s;
+
+  font-size:14px;
+
+  border-radius:3px;
+
+  position:relative;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 10px 30px rgba(200,154,104,.35);
+}
+.btn::before{
+
+  content:"";
+
+  position:absolute;
+
+  top:0;
+  left:-120%;
+
+  width:60%;
+  height:100%;
+
+  background:
+  linear-gradient(
+    90deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+  );
+
+  transform:skewX(-20deg);
+
+  transition:.7s;
+}
+
+.btn:hover::before{
+  left:140%;
+}
+
+.btn:hover{
+
+  transform:
+  translateY(-3px);
+
+  box-shadow:
+  0 18px 40px rgba(200,154,104,.45);
+
+}
 
     .btn:hover{
       background:#b07d47;
@@ -240,11 +357,54 @@
     }
 
     .product-card{
-      background:white;
-      padding-bottom:20px;
-      transition:.3s;
-    }
 
+  background:white;
+
+  padding-bottom:20px;
+
+  transition:.35s;
+
+  border-radius:10px;
+
+  overflow:hidden;
+
+  box-shadow:
+  0 8px 20px rgba(0,0,0,.04);
+}
+.product-card:hover{
+
+  transform:
+  translateY(-10px);
+
+  box-shadow:
+  0 20px 45px rgba(0,0,0,.12);
+
+}
+.category-card::after{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background:
+  linear-gradient(
+    to top,
+    rgba(0,0,0,.45),
+    transparent 45%
+  );
+
+}
+.hero h1,
+.section-title,
+.category-content h2,
+.gift-banner h2{
+
+  text-shadow:
+  0 5px 25px rgba(0,0,0,.25);
+
+}
     .product-card:hover{
       transform:translateY(-6px);
     }
@@ -395,24 +555,118 @@
   outline:none;
   font-size:16px;
 }
+.topbar{
 
-    @media(max-width:768px){
+  position:fixed;
+
+  top:0;
+  left:0;
+
+  width:100%;
+
+  z-index:10000;
+
+  background:#061426;
+
+  color:#fff;
+
+  padding:12px 20px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:40px;
+
+  flex-wrap:wrap;
+
+  font-size:13px;
+
+  letter-spacing:1px;
+}
+
+.navbar{
+
+  position:fixed;
+
+  top:34px;
+
+  left:0;
+
+  width:100%;
+
+  z-index:9999;
+
+  background:
+  rgba(255,255,255,.94);
+
+  backdrop-filter:blur(10px);
+
+  -webkit-backdrop-filter:blur(10px);
+
+  padding:22px 40px;
+
+  display:grid;
+
+  grid-template-columns:1fr auto 1fr;
+
+  align-items:center;
+
+  transition:.3s ease;
+
+  box-shadow:
+  0 4px 20px rgba(0,0,0,.05);
+}
+body{
+  padding-top:120px;
+}
+
+
+   @media(max-width:768px){
+
+  body{
+    padding-top:170px;
+  }
+
+  .topbar{
+
+    gap:8px;
+
+    font-size:10px;
+
+    padding:10px 12px;
+
+    text-align:center;
+  }
 
   .navbar{
+
+    top:56px;
+
     grid-template-columns:1fr;
-    gap:20px;
+
+    gap:18px;
+
     text-align:center;
-    padding:25px;
+
+    padding:18px;
   }
 
   .nav-links{
+
     justify-content:center;
+
     flex-wrap:wrap;
+
     gap:14px;
+
+    font-size:12px;
   }
 
   .logo{
-    font-size:42px;
+
+    font-size:40px;
+
     justify-self:center;
   }
 
@@ -421,15 +675,21 @@
   }
 
   .hero{
-    padding:40px 25px;
+
+    padding:40px 22px;
+
     min-height:75vh;
   }
 
   .hero h1{
-    font-size:48px;
+
+    font-size:46px;
+
+    line-height:1.05;
   }
 
   .hero p{
+
     font-size:18px;
   }
 
@@ -437,44 +697,54 @@
   .gift-banner,
   .features,
   .footer-grid{
+
     grid-template-columns:1fr;
   }
 
+  .product-grid{
+
+    grid-template-columns:1fr;
+  }
+
+  .category-overlay{
+
+    padding:30px;
+  }
+
   .category-content h2{
+
     font-size:48px;
   }
 
   .gift-banner{
-    padding:40px 25px;
+
+    padding:40px 24px;
   }
 
   .gift-banner h2{
-    font-size:44px;
+
+    font-size:42px;
   }
 
   .section-title{
+
     font-size:48px;
   }
 
-  .product-grid{
-    grid-template-columns:1fr;
-  }
-
   .products{
+
     padding:60px 20px;
   }
 
-  .topbar{
-    gap:15px;
-    font-size:11px;
-  }
-
-  .footer-grid{
-    gap:30px;
-  }
-
-}           
+}     
     
+html{
+  scroll-behavior:smooth;
+}
+::selection{
+  background:#c89a68;
+  color:white;
+}
 
   </style>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -553,7 +823,7 @@
             Ajuste perfecto, comodidad y estilo para todos los días.
           </p>
 
-          <a href="productos.html?cat=jeans" class="btn">
+          <a href="./productos.html" class="btn">
   Ver 
 </a>
         </div>
@@ -577,7 +847,7 @@
             Tejidos suaves y colores versátiles para cualquier ocasión.
           </p>
 
-          <a href="productos.html?cat=sweaters" class="btn">
+          <a href="./productos.html" class="btn">
   Ver 
 </a>
 
@@ -605,7 +875,7 @@
 
   </section>
 
-  <section class="products">
+ <!-- <section class="products">
 
     <div class="section-sub">Los más elegidos</div>
 
@@ -693,7 +963,7 @@
 
     </div>
 
-  </section>
+  </section>-->
 
   <section class="features">
 
@@ -757,7 +1027,7 @@
       <div>
   <h3>Ubicación</h3>
 
-  <p><a href="https://maps.app.goo.gl/2hxNUeELsLzQUU3JA" target="_blank" class="social-icon">Legendario Jeans</p></a>
+  <p><a href="https://maps.app.goo.gl/2hxNUeELsLzQUU3JA" target="_blank" class="social-icon">Argerich 484,<br/> Ciudad de Buenos Aires</p></a>
 </div>
 
 <div>
@@ -765,12 +1035,12 @@
 
   <p>
     Lunes a Viernes<br>
-    10:00 a 19:00 hs
+    8:30 a 16:30 hs
   </p>
 
   <p style="margin-top:10px;">
     Sábados<br>
-    10:00 a 14:00 hs
+    Cerrado
   </p>
 </div>
 
