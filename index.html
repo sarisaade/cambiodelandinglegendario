@@ -382,25 +382,31 @@ a{
     rgba(0,0,0,.45),
     transparent 45%
   );
+
+  pointer-events:none;
 }
 
 .category-overlay{
-
   position:absolute;
-
   inset:0;
 
-  display:flex;
+  background:rgba(0,0,0,.2);
 
+  display:flex;
   align-items:center;
 
   padding:60px;
 
   color:white;
-}
 
+  z-index:2;
+}
 .category-content{
   max-width:350px;
+
+  position:relative;
+
+  z-index:5;
 }
 
 .category-content span{
@@ -900,56 +906,59 @@ footer{
 
   <section class="categories">
 
-    <div class="category-card">
+  <div class="category-card">
 
-      <img src="blue-jeans-fabric-details.jpg">
-      <div class="category-overlay">
+    <img src="blue-jeans-fabric-details.jpg">
 
-        <div class="category-content">
+    <div class="category-overlay">
 
-          <span>Clásicos que nunca fallan</span>
+      <div class="category-content">
 
-          <h2>Jeans</h2>
+        <span>Clásicos que nunca fallan</span>
 
-          <p>
-            Ajuste perfecto, comodidad y estilo para todos los días.
-          </p>
+        <h2>Jeans</h2>
 
-          <a href="./productos.html" class="btn">
-  Ver 
-</a>
-        </div>
+        <p>
+          Ajuste perfecto, comodidad y estilo para todos los días.
+        </p>
 
-      </div>
-
-    </div>
-
-    <div class="category-card">
-
-      <img src="https://res.cloudinary.com/diaqczldj/image/upload/v1778074604/Gemini_Generated_Image_9gjqhj9gjqhj9gjq_yvux1c.png">
-      <div class="category-overlay">
-
-        <div class="category-content">
-
-          <span>Abrigo que va con todo</span>
-
-          <h2>Sweaters</h2>
-
-          <p>
-            Tejidos suaves y colores versátiles para cualquier ocasión.
-          </p>
-
-          <a href="./productos.html" class="btn">
-  Ver 
-</a>
-
-        </div>
+        <a href="./productos.html?buscar=jean" class="btn">
+          Ver todo
+        </a>
 
       </div>
 
     </div>
 
-  </section>
+  </div>
+
+  <div class="category-card">
+
+    <img src="https://res.cloudinary.com/diaqczldj/image/upload/v1778074604/Gemini_Generated_Image_9gjqhj9gjqhj9gjq_yvux1c.png">
+
+    <div class="category-overlay">
+
+      <div class="category-content">
+
+        <span>Abrigo que va con todo</span>
+
+        <h2>Sweaters</h2>
+
+        <p>
+          Tejidos suaves y colores versátiles para cualquier ocasión.
+        </p>
+
+        <a href="./productos.html?buscar=sweater" class="btn">
+          Ver todo
+        </a>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
 
   <section class="gift-banner">
 
