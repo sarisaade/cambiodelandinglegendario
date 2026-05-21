@@ -221,6 +221,37 @@ body{
 
   gap:28px;
 }
+@media(max-width:768px){
+
+  .product-container{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:12px;
+  }
+
+}
+@media(max-width:480px){
+
+  .product-container{
+
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:10px;
+  }
+
+  .product-card h2{
+    font-size:14px;
+  }
+
+  .price{
+    font-size:16px;
+  }
+
+}
+
 
 
 /* CARD */
@@ -782,10 +813,60 @@ body{
 
   .product-container{
 
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:
+    repeat(2,1fr);
 
-    gap:18px;
+    gap:12px;
   }
+  /* TALLES */
+
+.talles-container{
+
+  gap:6px;
+
+  margin-top:8px;
+}
+
+.talle-btn{
+
+  min-width:32px;
+
+  height:32px;
+
+  font-size:11px;
+
+  padding:4px 8px;
+
+  border-radius:8px;
+}
+
+/* COLORES */
+
+.colores-container{
+
+  gap:6px;
+
+  margin-top:8px;
+}
+
+.color-circle{
+
+  width:18px;
+
+  height:18px;
+}
+
+/* CANTIDAD */
+
+input[type="number"]{
+
+  width:55px;
+
+  height:34px;
+
+  font-size:14px;
+}
+
 
   .product-card h2{
 
@@ -805,10 +886,33 @@ body{
     padding:40px 14px;
   }
 
+  @media(max-width:480px){
+
   .product-container{
 
-    grid-template-columns:1fr;
+    grid-template-columns:
+    repeat(2,1fr);
+
+    gap:10px;
   }
+  .talle-btn{
+
+  min-width:28px;
+
+  height:28px;
+
+  font-size:10px;
+}
+
+  .product-card h2{
+    font-size:14px;
+  }
+
+  .price{
+    font-size:16px;
+  }
+
+}
 
   .products-hero h1{
 
