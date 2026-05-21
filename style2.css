@@ -496,41 +496,75 @@ body{
    TALLES
 ========================= */
 
-.talle-btn{
+..talles-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
 
-  border:1px solid #ddd;
+  padding: 0 12px;
+  margin-bottom: 16px;
 
-  background:white;
-
-  min-width:clamp(30px, 4vw, 38px);
-
-  height:clamp(30px, 4vw, 38px);
-
-  border-radius:8px;
-
-  cursor:pointer;
-
-  font-size:clamp(11px, 1.4vw, 13px);
-
-  transition:.2s;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.talles-container{
+.talle-btn {
+  border: 1px solid #ddd;
+  background: white;
 
-  display:flex;
+  min-width: clamp(34px, 8vw, 38px);
+  height: clamp(34px, 8vw, 38px);
 
-  justify-content:center;
+  border-radius: 8px;
+  cursor: pointer;
 
-  flex-wrap:wrap;
+  font-size: clamp(11px, 3vw, 13px);
 
-  gap:8px;
+  transition: 0.2s;
 
-  padding:0 12px;
-
-  margin-bottom:16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+/* hover solo en desktop */
+@media (hover: hover) {
+  .talle-btn:hover {
+    border-color: #999;
+  }
+}
 
+/* tablets */
+@media (max-width: 768px) {
+  .talles-container {
+    gap: 6px;
+    padding: 0 8px;
+  }
+}
+
+/* mobile chico */
+@media (max-width: 480px) {
+  .talles-container {
+    gap: 6px;
+  }
+
+  .talle-btn {
+    min-width: 36px;
+    height: 36px;
+    font-size: 12px;
+  }
+}
+
+/* mobile muy chico */
+@media (max-width: 360px) {
+  .talle-btn {
+    min-width: 32px;
+    height: 32px;
+    font-size: 11px;
+  }
+}
 /* =========================
    COLORES
 ========================= */
@@ -637,14 +671,21 @@ body{
 
 @media(max-width:480px){
 
-  .talles-container{
-
-    gap:6px;
+ .talles-container {
+    gap: 6px;
+    justify-content: center;
   }
 
-  .colores-container{
-
-    gap:6px;
+  .talle-btn {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+}
+/* mobile muy chico */
+@media (max-width: 360px) {
+  .talle-btn{
+    font-size: 11px;
+    padding: 5px 7px;
   }
 }
 
@@ -888,6 +929,20 @@ input[type="number"]{
 
     padding:40px 14px;
   }
+  .talles-container{
+
+  gap:6px;
+
+  margin-top:8px;
+}
+ .talle-btn{
+
+  min-width:20px;
+
+  height:20px;
+
+  font-size:10px;
+}
 
   @media(max-width:480px){
 
@@ -898,11 +953,17 @@ input[type="number"]{
 
     gap:10px;
   }
+  .talles-container{
+
+  gap:6px;
+
+  margin-top:8px;
+}
   .talle-btn{
 
-  min-width:28px;
+  min-width:10px;
 
-  height:28px;
+  height:10px;
 
   font-size:10px;
 }
