@@ -247,7 +247,7 @@ body{
   }
 
   .price{
-    font-size:16px;
+    font-size:12px;
   }
 
 }
@@ -361,7 +361,7 @@ body{
 
   color:#0b63ff;
 
-  font-size:34px;
+  font-size:25px;
 
   font-weight:700;
 
@@ -672,6 +672,7 @@ body{
   cursor:pointer;
 
   transition:.3s;
+  margin-top: auto;
 }
 
 .add-to-cart:hover{
@@ -866,7 +867,9 @@ input[type="number"]{
 
   font-size:14px;
 }
-
+.add-to-cart{
+    margin-top: auto;
+}
 
   .product-card h2{
 
@@ -875,7 +878,7 @@ input[type="number"]{
 
   .price{
 
-    font-size:26px;
+    font-size:20px;
   }
 }
 
@@ -913,6 +916,9 @@ input[type="number"]{
   }
 
 }
+.add-to-cart{
+    margin-top: auto;
+}
 
   .products-hero h1{
 
@@ -931,7 +937,7 @@ input[type="number"]{
 
   .price{
 
-    font-size:30px;
+    font-size:15px;
   }
 }
 /* MOBILE */
