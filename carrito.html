@@ -10,26 +10,29 @@
 
     <!-- ICONOS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+    
 
-body{
-  font-family:'Montserrat',sans-serif;
-  overflow-x:hidden;
-}
-
-a{
-  text-decoration:none;
-  color:inherit;
-}
-/* =========================
-   TOPBAR
+  <style> *{ margin:0;
+   padding:0;
+    box-sizing:border-box;
+   } 
+   body{ font-family:'Montserrat',sans-serif; 
+   overflow-x:hidden; 
+  } 
+  a{ 
+    text-decoration:none; color:inherit;
+   } 
+   /* ========================= TOPBAR ========================= */ .topbar{ position:fixed; top:0; left:0; width:100%; height:38px; z-index:10000; background:#061426; color:#fff; display:flex; align-items:center; justify-content:center; gap:40px; flex-wrap:wrap; font-size:13px; letter-spacing:1px; } .navbar{ position:fixed; top:34px; left:0; width:100%; margin-top:-1px; z-index:9999; background:rgba(255,255,255,.94); backdrop-filter:blur(10px); padding:22px 40px; display:grid; grid-template-columns:1fr auto 1fr; align-items:center; transition:.3s ease; box-shadow:0 4px 20px rgba(0,0,0,.05); } .logo{ justify-self:center; font-family:'Cormorant Garamond',serif; font-size:54px; font-weight:600; letter-spacing:2px; } .nav-links{ display:flex; gap:28px; font-size:14px; text-transform:uppercase; } .icons{ display:flex; gap:20px; font-size:20px; justify-self:end; } @media(max-width:768px){ body{ padding-top:140px; } .topbar{ gap:8px; font-size:10px; padding:8px 10px; text-align:center; } .navbar{ top:32px; grid-template-columns:1fr; gap:12px; padding:14px 18px; text-align:center; } .nav-links{ justify-content:center; flex-wrap:wrap; gap:10px; font-size:11px; } .logo{ font-size:32px; line-height:1; } .icons{ justify-self:center; }
+   /* =========================
+   HEADER ESTILO INDEX
 ========================= */
 
+body{
+  padding-top:100px;
+  background:#f7f4ef;
+}
+
+/* topbar */
 .topbar{
 
   position:fixed;
@@ -41,46 +44,42 @@ a{
 
   height:38px;
 
-  z-index:10000;
-
   background:#061426;
 
-  color:#fff;
+  color:white;
 
   display:flex;
 
-  align-items:center;
-
   justify-content:center;
+
+  align-items:center;
 
   gap:40px;
 
-  flex-wrap:wrap;
-
-  font-size:13px;
+  z-index:10000;
 
   letter-spacing:1px;
+
+  font-size:13px;
 }
 
+/* navbar */
 .navbar{
 
   position:fixed;
 
-  top:34px;
+  top:38px;
 
   left:0;
 
   width:100%;
 
-  margin-top:-1px;
-
-  z-index:9999;
-
-  background:rgba(255,255,255,.94);
+  background:
+  rgba(255,255,255,.95);
 
   backdrop-filter:blur(10px);
 
-  padding:22px 40px;
+  -webkit-backdrop-filter:blur(10px);
 
   display:grid;
 
@@ -88,81 +87,265 @@ a{
 
   align-items:center;
 
-  transition:.3s ease;
+  padding:20px 40px;
 
-  box-shadow:0 4px 20px rgba(0,0,0,.05);
+  z-index:9999;
+
+  box-shadow:
+  0 4px 20px rgba(0,0,0,.05);
 }
 
-
+/* logo */
 .logo{
+
   justify-self:center;
 
   font-family:'Cormorant Garamond',serif;
 
   font-size:54px;
 
-  font-weight:600;
-
   letter-spacing:2px;
+
+  font-weight:600;
 }
 
+/* links */
 .nav-links{
+
   display:flex;
-  gap:28px;
+
+  gap:24px;
+
   font-size:14px;
+
   text-transform:uppercase;
 }
 
+/* carrito */
 .icons{
-  display:flex;
-  gap:20px;
-  font-size:20px;
+
   justify-self:end;
+
+  display:flex;
+
+  align-items:center;
 }
+
+.cart{
+
+  position:relative;
+
+  font-size:24px;
+}
+
+.cart-count{
+
+  position:absolute;
+
+  top:-10px;
+  right:-12px;
+
+  width:22px;
+  height:22px;
+
+  border-radius:50%;
+
+  background:#061426;
+
+  color:white;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  font-size:12px;
+}
+html,
+body{
+  margin:0;
+  padding-left:0;
+  padding-right:0;
+  overflow-x:hidden;
+}
+
+header,
+main,
+.topbar,
+.navbar{
+  width:100%;
+  max-width:100%;
+}
+/* MOBILE */
+
 @media(max-width:768px){
 
   body{
-    padding-top:140px;
+    padding-top:125px;
   }
 
   .topbar{
-    gap:8px;
+
+    height:auto;
+
+    flex-direction:column;
+
+    gap:4px;
+
+    padding:8px;
+
     font-size:10px;
-    padding:8px 10px;
+
     text-align:center;
   }
 
   .navbar{
 
-    top:32px;
+    top:52px;
 
-    grid-template-columns:1fr;
+    width:100%;
 
-    gap:12px;
+    left:0;
 
-    padding:14px 18px;
+    padding:12px 10px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
 
     text-align:center;
   }
 
   .nav-links{
+
+    width:100%;
+
+    display:flex;
+
     justify-content:center;
-    flex-wrap:wrap;
+
+    align-items:center;
+
     gap:10px;
-    font-size:11px;
+
+    flex-wrap:wrap;
+
+    font-size:10px;
   }
 
   .logo{
-    font-size:32px;
+
+    font-size:30px;
+
     line-height:1;
+
+    text-align:center;
   }
 
   .icons{
-    justify-self:center;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
   }
 
-  </style>
+}
+/* FIX MOBILE CENTRADO */
 
+html,
+body{
+  overflow-x:hidden;
+}
+
+body{
+  margin:0 auto;
+}
+
+header,
+main,
+.topbar,
+.navbar{
+  width:100%;
+  max-width:100%;
+}
+
+.navbar,
+.topbar{
+  left:0;
+  right:0;
+}
+
+main{
+  width:100%;
+  margin:0;
+  padding-left:0;
+  padding-right:0;
+}
+@media(max-width:480px){
+
+  body{
+    padding-top:115px;
+  }
+
+  .topbar{
+
+    font-size:9px;
+
+    gap:2px;
+
+    padding:6px;
+  }
+
+  .navbar{
+
+    top:46px;
+
+    padding:10px 6px;
+
+    gap:6px;
+  }
+
+  .nav-links{
+
+    gap:8px;
+
+    font-size:9px;
+  }
+
+  .logo{
+
+    font-size:24px;
+
+    letter-spacing:1px;
+  }
+
+  .cart{
+
+    font-size:20px;
+  }
+
+  .cart-count{
+
+    width:18px;
+    height:18px;
+
+    font-size:10px;
+
+    top:-8px;
+    right:-8px;
+  }
+
+}
+ </style>
     
 </head>
 
@@ -184,7 +367,7 @@ a{
 
     <div class="nav-links">
       <a href="./index.html">Inicio</a>
-      <a href="./productos.html">Mira nuestros productos</a>
+      
       
       
     </div>
@@ -197,10 +380,7 @@ a{
 
   
 
-            <a href="./carrito.html" class="cart">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </a>
+           
 
         </div>
     </div>
@@ -254,6 +434,13 @@ a{
 
 <!-- SCRIPT -->
 <script src="./script.js"></script>
+<a 
+  href="https://wa.me/5491150620235"
+  class="whatsapp-float"
+  target="_blank"
+>
+  <i class="fab fa-whatsapp"></i>
+</a>
 
 </body>
 </html>
