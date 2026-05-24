@@ -260,16 +260,20 @@ body{
 
   background:white;
 
-  border-radius:18px;
+  /*border-radius:18px;*/
 
   overflow:hidden;
+   display:flex;
+
+  flex-direction:column;
 
   transition:.3s ease;
 
   box-shadow:
   0 4px 20px rgba(0,0,0,.05);
 
-  padding-bottom:24px;
+  padding-bottom:30px;
+  padding-top:30px;
 }
 
 .product-card:hover{
@@ -355,6 +359,11 @@ body{
   font-size:22px;
 
   margin:22px 20px 12px;
+   display:flex;
+
+  flex-direction:column;
+
+  flex:1;
 }
 
 .price{
@@ -496,7 +505,7 @@ body{
    TALLES
 ========================= */
 
-..talles-container {
+.talles-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -539,7 +548,7 @@ body{
 /* tablets */
 @media (max-width: 768px) {
   .talles-container {
-    gap: 6px;
+    gap: 8px;
     padding: 0 8px;
   }
 }
@@ -550,19 +559,24 @@ body{
     gap: 6px;
   }
 
-  .talle-btn {
-    min-width: 36px;
-    height: 36px;
-    font-size: 12px;
+   .talle-btn{
+
+    min-width:36px;
+
+    height:36px;
+
+    font-size:12px;
+
+    border-radius:9px;
   }
 }
 
 /* mobile muy chico */
 @media (max-width: 360px) {
   .talle-btn {
-    min-width: 32px;
-    height: 32px;
-    font-size: 11px;
+    min-width: 36px;
+    height: 36px;
+    font-size: 12px;
   }
 }
 /* =========================
@@ -638,35 +652,50 @@ body{
 
   position:fixed;
 
-  right:clamp(10px, 2vw, 18px);
+  right:18px;
+  bottom:18px;
 
-  bottom:clamp(10px, 2vw, 18px);
-
-  width:clamp(46px, 7vw, 62px);
-
-  height:clamp(46px, 7vw, 62px);
+  width:60px;
+  height:60px;
 
   border-radius:50%;
 
-  background:#25d366;
+  background:#25D366;
 
   display:flex;
-
   align-items:center;
-
   justify-content:center;
 
   color:white;
 
-  font-size:clamp(24px, 4vw, 34px);
+  font-size:32px;
 
-  z-index:9999;
+  z-index:999999;
 
-  box-shadow:
-  0 10px 25px rgba(0,0,0,.2);
+  box-shadow:0 8px 25px rgba(0,0,0,.25);
+
+  transition:.3s;
 }
 
+.whatsapp-float:hover{
 
+  transform:scale(1.08);
+
+}
+@media(max-width:768px){
+
+  .whatsapp-float{
+
+    width:52px;
+    height:52px;
+
+    font-size:28px;
+
+    right:14px;
+    bottom:14px;
+  }
+
+}
 /* MOBILE EXTRA */
 
 @media(max-width:480px){
@@ -732,9 +761,9 @@ body{
 
   bottom:18px;
 
-  width:62px;
+  width: 50px;
 
-  height:62px;
+  height:50px;
 
   border-radius:50%;
 
@@ -943,6 +972,7 @@ input[type="number"]{
 
   font-size:10px;
 }
+}
 
   @media(max-width:480px){
 
@@ -1000,7 +1030,7 @@ input[type="number"]{
 
     font-size:15px;
   }
-}
+
 /* MOBILE */
 
 @media(max-width:768px){
@@ -1094,4 +1124,205 @@ input[type="number"]{
     width:100%;
   }
 
+}
+/* =========================
+   MODAL PRODUCTO
+========================= */
+
+.product-modal{
+
+  position:fixed !important;
+
+  inset:0;
+
+  width:100vw;
+
+  height:100vh;
+
+  background:rgba(0,0,0,.75);
+
+  display:none;
+
+  align-items:center;
+
+  justify-content:center;
+
+  z-index:999999999;
+
+  padding:20px;
+
+  overflow:auto;
+
+  transform:none !important;
+}
+
+.modal-box{
+
+  position:relative;
+
+  background:white;
+
+  width:min(92vw, 520px);
+
+  
+
+  overflow:hidden;
+
+  padding:20px;
+
+  animation:modalFade .25s ease;
+}
+
+.modal-box img{
+
+  width:100%;
+
+  max-height:70vh;
+
+  object-fit:cover;
+
+  
+}
+
+.modal-box h2{
+
+  margin-top:18px;
+
+  font-size:28px;
+
+  font-family:'Cormorant Garamond',serif;
+}
+
+.modal-box p{
+
+  margin-top:8px;
+
+  font-size:20px;
+
+  font-weight:600;
+
+  color:#0b63ff;
+}
+
+
+/* CERRAR */
+
+.close-modal{
+
+  position:absolute;
+
+  top:10px;
+
+  right:16px;
+
+  font-size:34px;
+
+  cursor:pointer;
+
+  z-index:5;
+
+  color:white;
+
+  text-shadow:0 2px 10px rgba(0,0,0,.5);
+}
+
+
+/* FLECHAS */
+
+.modal-arrows{
+
+  position:absolute;
+
+  inset:0;
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:space-between;
+
+  padding:0 14px;
+
+  pointer-events:none;
+}
+
+.modal-arrows span{
+
+  pointer-events:auto;
+
+  width:42px;
+
+  height:42px;
+
+  border-radius:50%;
+
+  background:rgba(255,255,255,.9);
+
+  display:flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  cursor:pointer;
+
+  font-size:22px;
+
+  font-weight:bold;
+}
+
+
+/* ANIMACION */
+
+@keyframes modalFade{
+
+  from{
+    opacity:0;
+    transform:scale(.96);
+  }
+
+  to{
+    opacity:1;
+    transform:scale(1);
+  }
+}
+
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  .modal-box{
+
+    width:95vw;
+
+    padding:14px;
+  }
+
+  .modal-box h2{
+
+    font-size:22px;
+  }
+
+  .modal-box p{
+
+    font-size:18px;
+  }
+
+  .close-modal{
+
+    font-size:28px;
+
+    top:8px;
+
+    right:12px;
+  }
+
+  .modal-arrows span{
+
+    width:36px;
+    height:36px;
+
+    font-size:18px;
+  }
 }

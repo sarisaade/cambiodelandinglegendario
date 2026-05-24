@@ -802,27 +802,46 @@ btn.addEventListener("click", () => {
   });
 });
 document.addEventListener("DOMContentLoaded", () => {
+
   const modal = document.getElementById("product-modal");
+
   const closeBtn = document.querySelector(".close-modal");
 
   if (!modal || !closeBtn) return;
 
-  closeBtn.addEventListener("click", () => {
-    modal.style.display = "none";
+  // CERRAR CON X
+  closeBtn.addEventListener("click", cerrarModal);
+
+  // CERRAR TOCANDO FONDO
+  modal.addEventListener("click", (e) => {
+
+    if (e.target === modal) {
+
+      cerrarModal();
+    }
+
   });
 
-  modal.addEventListener("click", (e) => {
-    if (e.target.id === "product-modal") {
-      modal.style.display = "none";
-    }
-  });
 });
+
+function cerrarModal(){
+
+  const modal = document.getElementById("product-modal");
+
+  modal.style.display = "none";
+
+  document.body.style.overflow = "";
+}
+
+
 function abrirModalConCarrusel(p, imagenActual) {
 
   const modal = document.getElementById("product-modal");
+
   const imgEl = document.getElementById("modal-img");
 
   const prev = document.getElementById("prev-img");
+
   const next = document.getElementById("next-img");
 
   const imagenes = [
@@ -834,63 +853,45 @@ function abrirModalConCarrusel(p, imagenActual) {
     p.Imagen6
   ].filter(img => img && img.trim() !== "");
 
- let index = 0;
+  let index = 0;
 
-if (imagenActual) {
+  if (imagenActual) {
 
-  imgEl.src = imagenActual;
-
-  index = imagenes.findIndex(img =>
-    imagenActual.includes(img)
-  );
-
-  if (index < 0) index = 0;
-
-} else {
-
-  imgEl.src = imagenes[0];
-
-}
-
-  // 👉 siguiente
-  next.onclick = () => {
-    index = (index + 1) % imagenes.length;
-    imgEl.src = imagenes[index];
-  };
-
-  // 👉 anterior
-  prev.onclick = () => {
-    index = (index - 1 + imagenes.length) % imagenes.length;
-    imgEl.src = imagenes[index];
-  };
-
-  // info
-  document.getElementById("modal-title").textContent = p.Nombre;
-  document.getElementById("modal-price").textContent = "$" + p.Precio;
-
-  modal.style.display = "flex";
-}
-function buscarDesdeURL(data) {
-
-  const params =
-  new URLSearchParams(window.location.search);
-
-  const busqueda =
-  params.get("buscar");
-
-  if (!busqueda) return data;
-
-  return data.filter(p => {
-
-    return (
-      p.Nombre &&
-      p.Nombre
-        .toLowerCase()
-        .includes(
-          busqueda.toLowerCase()
-        )
+    index = imagenes.findIndex(img =>
+      imagenActual.includes(img)
     );
 
-  });
+    if (index < 0) index = 0;
+  }
 
+  imgEl.src = imagenes[index];
+
+  // SIGUIENTE
+  next.onclick = () => {
+
+    index = (index + 1) % imagenes.length;
+
+    imgEl.src = imagenes[index];
+  };
+
+  // ANTERIOR
+  prev.onclick = () => {
+
+    index = (index - 1 + imagenes.length) % imagenes.length;
+
+    imgEl.src = imagenes[index];
+  };
+
+  // INFO
+  document.getElementById("modal-title").textContent = p.Nombre;
+
+  document.getElementById("modal-price").textContent =
+    "$" + p.Precio;
+
+  // ABRIR
+  modal.style.display = "flex";
+
+  // BLOQUEAR SCROLL
+  document.body.style.overflow = "hidden";
 }
+
